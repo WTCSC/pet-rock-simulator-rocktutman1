@@ -30,24 +30,32 @@ for num in range(20):
     print(f"\rRandomizing Personality {junk}", end="")
     time.sleep(.2)
 print ("")
-personality = random.randit(1,4)
-if personality == 1: print ("Your rock's personality is lazy")
-if personality == 2: print ("Your rock's personality is toxic")
-if personality == 3: print ("Your rock's personality is manic")
-if personality == 4: print ("Your rock's personality is reserved")
+personality = random.randint(1,4)
+if personality == 1: print ("Your rock's personality is lazy \n +50%s fatigue gained from all sources \n +50% fatigue recovered from resting \n +2 fatigue recovered from eating")
+if personality == 2: print ("Your rock's personality is toxic \n Loose 5 hapiness when loosing a battle \n Gain 5 hapiness when winning a battle \n Gain 1 hapiness when at least one stat is above 7")
+if personality == 3: print ("Your rock's personality is manic \n Fatigue is always at 0/10 \n +100% hunger gain")
+if personality == 4: print ("Your rock's personality is reserved \n -2 to Strength and Technique, \n +2 to Endurance and Toughness")
 input ("Enter to continue")
 while playing == 1:
-
+    if personality == 3:
+        Fatigue = 0
     if turns > 0:
         print (f"=== Your pet rock {Name} ===")
-        print (f"Strength: {Strength}/10")
-        print (f"Endurance: {Endurance}/10")
-        print (f"Technique: {Technique}/10")
-        print (f"Toughness: {Toughness}/10")
+        if personality == 4:
+            print (f"Strength: {Strength-2}/10 -- {Strength}/10 before reserved")
+            print (f"Endurance: {Endurance+2}/10 -- {Endurance}/10 before reserved")
+            print (f"Technique: {Technique-2}/10 -- {Technique}/10 before reserved")
+            print (f"Toughness: {Toughness+2}/10 -- {Toughness}/10 before reserved")
+        else:
+            print (f"Strength: {Strength}/10")
+            print (f"Endurance: {Endurance}/10")
+            print (f"Technique: {Technique}/10")
+            print (f"Toughness: {Toughness}/10")
         print (f"Fatigue: {Fatigue}/10")
         print (f"Hunger: {Hunger}/10")
         print (f"Happiness: {Happiness}/10")
-        action = input ("What would you like to do? \n 1. Weightlifting \n 2. Running \n 3. Sparring \n 4. Eat \n 5. Lay on the couch")
+        input ("Enter to continue")
+        action = input ("How would you like to train {name}? \n 1. Weightlifting \n 2. Running \n 3. Sparring \n 4. Eat \n 5. Lay on the couch \n")
         if action == "1": pass
         elif action == "2": pass
         elif action == "3": pass
