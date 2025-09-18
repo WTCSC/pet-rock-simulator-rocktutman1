@@ -4,7 +4,20 @@ print ("Welcome to the pet rock simulator, Please run in a large terminal for th
 def clear():
     print ("\n" * 100)
 def Weightlifting():
-    pass
+    count = 0
+    block = "█"
+    space = " "
+    direction = "R"
+    print("Hit enter to stop the bar \nDont let it overflow")
+    for i in range(300):
+        if count == 30:
+            direction = "L"
+        if direction == "R":
+            count += 1
+        elif direction == "L":
+            count -= 1
+        print (f"[{block*count}{space*(30-count)}]")
+        time.sleep(.2)
 def Running():
     correct = 0
     letters = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm']
@@ -21,7 +34,7 @@ def Running():
         elif time.time() - start > 1.5 and KeyHit != target:
             print ("You took too long to hit the wrong key")
         elif time.time() - start > 1.5:
-            print (f"You took too long! ({time.time() - start} seconds")
+            print (f"You took too long! ({time.time() - start} seconds)")
         elif KeyHit != target:
             print ("Wrong key!")
     print ("Training finished")
@@ -78,18 +91,19 @@ while playing == 1:
         print (f"Happiness: {Happiness}/10")
         input ("Enter to continue")
         action = input (f"How would you like to train {name}? \n 1. Weightlifting \n 2. Running \n 3. Sparring \n 4. Eat \n 5. Lay on the couch \n")
-        if action == "1": pass
+        if action == "1": 
+            Weightlifting()
         elif action == "2": 
             correct = Running()
-            Endurance += .5 + correct * .25
+            Endurance += correct * .25
             Happiness += 1
-            Technique += round(correct * .1, 1)
-            Toughness += round(correct * .1, 1)
+            Technique = round(Technique + (correct * .1), 1)
+            Toughness = round(Toughness + (correct * .1), 1)
             Fatigue += .5 * (7-correct)
             Hunger += 1
             if correct > 5:
                 Hunger += .5
-            print (f"You gained \n {.5 + correct * .25} Endurance \n 1 Happiness \n {round(correct * .1,1)} Technique and Toughness \n {.5 * (7-correct)} Fatigue")
+            print (f"You gained \n {correct * .25} Endurance \n 1 Happiness \n {round(correct * .1,1)} Technique and Toughness \n {.5 * (7-correct)} Fatigue")
             if correct > 5:
                 print (" 1.5 Hunger")
             else:
