@@ -3,7 +3,7 @@ import time, random, curses
 def clear():
     print ("\n" * 100)
 clear()
-print ("Welcome to the pet rock simulator, Please run in a large terminal for the best expierence")
+print ("Welcome to the rock boxing simulator, Please run in a large terminal for the best expierence")
 def Weightlifting(stdscr):
     count = 0
     block = "█"
@@ -182,7 +182,7 @@ for num in range(20):
 print ("")
 personality = random.randint(1,4)
 if personality == 1: print (f"{name}'s personality is lazy \n +50% fatigue gained from all sources \n +50% fatigue recovered from resting \n +3 fatigue recovered from eating")
-            if personality == 2: print (f"{name}'s personality is toxic \n Gain 1 happiness when at least one stat is above 7 \n 20% chance to gain a random stat at start of turn")
+if personality == 2: print (f"{name}'s personality is toxic \n Gain 1 happiness when at least one stat is above 7 \n 20% chance to gain a random stat at start of turn")
 if personality == 3: print (f"{name}'s personality is rude \n Strength +4 \n -1 hunger at start of turn")
 if personality == 4: print (f"{name}'s personality is reserved \n -2 to Strength and Technique, \n +2 to Endurance and Toughness")
 input ("Enter to continue")
