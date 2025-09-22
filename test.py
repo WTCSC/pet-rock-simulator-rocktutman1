@@ -182,7 +182,7 @@ for num in range(20):
 print ("")
 personality = random.randint(1,4)
 if personality == 1: print (f"{name}'s personality is lazy \n +50% fatigue gained from all sources \n +50% fatigue recovered from resting \n +3 fatigue recovered from eating")
-if personality == 2: print (f"{name}'s personality is toxic \n Loose 5 happiness when loosing a battle \n Gain 5 happiness when winning a battle \n Gain 1 happiness when at least one stat is above 7")
+            if personality == 2: print (f"{name}'s personality is toxic \n Gain 1 happiness when at least one stat is above 7 \n 20% chance to gain a random stat at start of turn")
 if personality == 3: print (f"{name}'s personality is rude \n Strength +4 \n -1 hunger at start of turn")
 if personality == 4: print (f"{name}'s personality is reserved \n -2 to Strength and Technique, \n +2 to Endurance and Toughness")
 input ("Enter to continue")
@@ -211,11 +211,10 @@ while playing == 1:
             if statgain == 4:
                 Toughness += 1
                 print ("+1 Toughness from toxic personality")
-    print (f"Turns until battle day: {turns}")
     if turns > 0:
         if NotFirst == True:#personality info
             if personality == 1: print (f"{name}'s personality is lazy \n +50% fatigue gained from all sources \n +50% fatigue recovered from resting \n +3 fatigue recovered from eating")
-            if personality == 2: print (f"{name}'s personality is toxic \n Loose 5 happiness when loosing a battle \n Gain 1 happiness when at least one stat is above 7 \n 20% chance to gain a random stat at start of turn")
+            if personality == 2: print (f"{name}'s personality is toxic \n Gain 1 happiness when at least one stat is above 7 \n 20% chance to gain a random stat at start of turn")
             if personality == 3: print (f"{name}'s personality is rude \n Strength +4 \n -1 hunger at start of turn")
             if personality == 4: print (f"{name}'s personality is reserved \n -2 to Strength and Technique, \n +2 to Endurance and Toughness")
         print (f"=== Your pet rock {name} ===")
@@ -377,11 +376,7 @@ while playing == 1:
         else: # other options 
             print (f"Thats not a option! {name} is upset and looses 1 happiness")
             Happiness -= 1
-    if turns == 0:
-        print ("Battle day")
-        exit()
     input("Enter to continue")
-    turns -= 1
     NotFirst = True
     clear()
     if Strength > 10:
