@@ -7,6 +7,8 @@
 
 The **rocktutman1 rock simulator** is a *unique* Tamagotchi style game to play for fun!
 
+![flowchartofrunningcode](https://github.com/WTCSC/pet-rock-simulator-rocktutman1/blob/feedback/images/Screenshot%20from%202025-09-22%2013-45-39.png)
+
 ## Requirements
 
 - **Python 3** or higher
@@ -40,6 +42,8 @@ If you *cloned* the repo
 Then run the following command 
 >python3 test.py
 
+After running **test.py** you should see a screen like this
+![imageofcoderunning](https://github.com/WTCSC/pet-rock-simulator-rocktutman1/blob/feedback/images/Screenshot%20from%202025-09-22%2013-46-36.png)
 ## Configuration
 
 No configuration is currently avaiable
