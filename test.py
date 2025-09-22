@@ -190,7 +190,7 @@ clear()
 # While loop you never leave begins here
 while playing == 1: 
     if personality == 3:#rude hunger loss
-        Hunger -= 1
+        Hunger += 1
         print ("-1 Hunger from rude personality")
     if personality == 2:#toxic stat gain
         if Strength > 7 or Technique > 7 or Endurance > 7 or Toughness > 7:
